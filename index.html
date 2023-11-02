@@ -56,11 +56,11 @@
               </div>
             </div>
             <div class="col-12 flex-grow-1 overflow-y-scroll h-0 p-0 pb-2">
-              <div class="contact d-flex justify-content-between border-bottom">
+              <div class="contact d-flex justify-content-between border-bottom" v-for="person in contacts">
                 <div class="d-flex">
-                  <img class="avatar" src="img/avatar_1.jpg" alt="">
+                  <img class="avatar" :src="person.avatar" :alt="person.name">
                   <div class="m-2">
-                    <span class="d-block fw-semibold">Name</span>
+                    <span class="d-block fw-semibold">{{person.name}}</span>
                     <span class="smallText">Ultimo messaggio inviato</span>
                   </div>
                 </div>
