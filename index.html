@@ -27,14 +27,33 @@
       <div class="row h-100 flex-nowrap">
         <div class="col-4 border contacts">
           <div class="row h-100 flex-column flex-nowrap">
-            <div class="col-12 header p-0">
-              Header
+            <div class="col-12 header p-0 d-flex justify-content-between align-content-center align-items-center">
+              <div>
+                <img class="avatar" src="img/avatar_io.jpg" alt="Sofia">
+                <span class="fw-semibold">Sofia</span>
+              </div>
+              <div class="px-2">
+                <i class="fa-solid fa-circle-notch fontAwesome greyIcons"></i>
+                <i class="fa-solid fa-message fontAwesome greyIcons"></i>
+                <i class="fa-solid fa-ellipsis-vertical fontAwesome greyIcons"></i>
+              </div>
             </div>
-            <div class="col-12 p-0">
-              Notifiche
+            <div class="col-12 p-0 notification d-flex align-items-center">
+              <div class="p-3">
+                <i class="fa-solid fa-bell-slash bell rounded-circle"></i>
+              </div>
+              <div>
+                <span class="d-block fw-semibold">Ricevi notifiche di nuovi messaggi</span>
+                <span class="smallText text-decoration-underline">Attiva notifiche desktop</span>
+              </div>
             </div>
-            <div class="col-12 p-0">
-              Search
+            <div class="col-12 p-2 lightGreyBg">
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <button class="btn border rounded-0 bg-white"><i class="fas fa-search px-3"></i></button>
+                </div>
+                <input type="text" class="form-control smallText" placeholder="Cerca o inizia una nuova chat">
+              </div>
             </div>
             <div class="col-12 flex-grow-1 overflow-y-auto h-0 p-0">
               Contatti
@@ -46,7 +65,7 @@
             <div class="col-12 p-0">
               utente
             </div>
-            <div class="col-12 flex-grow-1 overflow-y-auto h-0 p-0">
+            <div class="col-12 flex-grow-1 overflow-y-auto h-0 p-0 chatImg">
               chat
             </div>
             <div class="col-12 p-0">

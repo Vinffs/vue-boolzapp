@@ -1,18 +1,24 @@
+/* General */
 :root {
   --my-bg-color: linear-gradient(180deg, #009688 18.50%, #DBDBD3 18.50%);
   --my-white-color: #FFFFFF;
   --my-primary-header-color: #EAEAEA;
   --my-contacts-color: #E9EBEB;
   --my-dark-text: #161012;
-  --my-lightgrey-text-color: #B6BBC1;
+  --my-lightgrey-text-color: #C4BBC6;
   --my-lightgrey-icons-color: #B1B1B1;
   --my-lightgreen-msg-color: #D5F9BA;
   --my-lightblue-color: #8EDAFC;
+  --my-secondary-lightblue: #F2FBFF;
 }
 
 body {
   font-family: 'Lato', sans-serif;
   background: var(--my-bg-color);
+}
+
+.h-0 {
+  height: 0;
 }
 
 #app {
@@ -21,6 +27,7 @@ body {
   height: calc(100vh - 6rem);
 }
 
+/* backgrounds */
 .contacts {
   background-color: var(--my-white-color)
 }
@@ -29,6 +36,45 @@ body {
   background-color: var(--my-primary-header-color);
 }
 
-.h-0 {
-  height: 0;
+.chatImg {
+  background-image: url("../img/mine.jpg");
+}
+
+.notification {
+  background-color: var(--my-lightblue-color);
+}
+
+.lightGreyBg {
+  background-color: var(--my-primary-header-color);
+}
+
+
+/* Image and FontAweasome */
+
+.avatar {
+  width: 50px;
+  border-radius: 50%;
+  margin: 0.5rem;
+}
+
+.fontAwesome,
+.bell {
+  font-size: 1.5em;
+  padding: 0 0.5rem;
+}
+
+.greyIcons {
+  color: var(--my-lightgrey-icons-color);
+}
+
+.bell {
+  color: var(--my-lightblue-color);
+  padding: 0.7em;
+  background-color: var(--my-secondary-lightblue);
+}
+
+/* fonts */
+.smallText {
+  font-size: 0.8em;
+  color: var(--my-lightgrey-text-color)
 }
