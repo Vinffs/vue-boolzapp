@@ -103,7 +103,7 @@
 
             <!-- chat -->
             <div class="col-12 flex-grow-1 overflow-y-auto h-0 p-0 chatImg">
-              <div class="row m-5" v-for="contact in activeContact" :key="contact.id">
+              <div class="row m-5">
                 <div class="col-12 d-flex mb-3"
                   :class="(message.status === 'sent' ? 'justify-content-end' : 'justify-content-start')"
                   v-for="message in activeContact.messages" :key="message.date">
