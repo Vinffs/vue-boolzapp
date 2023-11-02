@@ -27,24 +27,24 @@
 
       <!-- left side bar -->
       <div class="row h-100 flex-nowrap">
-        <div class="col-4 border contacts">
+        <div class="col-4 contacts">
           <div class="row h-100 flex-column flex-nowrap">
 
             <!-- User profile -->
-            <div class="col-12 header p-0 d-flex justify-content-between align-content-center align-items-center">
+            <div class="col-12 header px-0 d-flex justify-content-between align-content-center align-items-center">
               <div>
                 <img class="avatar" src="img/avatar_io.jpg" alt="Sofia">
                 <span class="fw-semibold">Sofia</span>
               </div>
               <div class="px-2">
-                <i class="fa-solid fa-circle-notch fontAwesome greyIcons"></i>
-                <i class="fa-solid fa-message fontAwesome greyIcons"></i>
+                <i class="fa-solid fa-circle-notch fontAwesome greyIcons d-sm-none d-md-inline-block"></i>
+                <i class="fa-solid fa-message fontAwesome greyIcons d-sm-none d-md-inline-block"></i>
                 <i class="fa-solid fa-ellipsis-vertical fontAwesome greyIcons"></i>
               </div>
             </div>
 
             <!-- notifications -->
-            <div class="col-12 p-0 notification d-flex align-items-center">
+            <div class="col-12 notification d-flex align-items-center">
               <div class="p-3">
                 <i class="fa-solid fa-bell-slash bell rounded-circle fontAwesome"></i>
               </div>
@@ -65,7 +65,7 @@
             </div>
 
             <!-- contacts -->
-            <div class="col-12 flex-grow-1 overflow-y-scroll h-0 p-0 pb-2">
+            <div class="col-12 flex-grow-1 overflow-y-scroll h-0 pb-2 px-0">
               <div class="d-flex justify-content-between border-bottom" v-for="person in contacts"
                 @click='active(person)' style='cursor:pointer'>
                 <div class="d-flex">
@@ -86,27 +86,27 @@
           <div class="row h-100 flex-column flex-nowrap">
 
             <!-- contact chat -->
-            <div class="col-12 header p-0 d-flex align-content-center align-items-center justify-content-around">
-              <div class="col-1">
+            <div class="col-12 header px-0 d-flex align-content-center align-items-center justify-content-around">
+              <div class="col-sm-10 col-md d-flex">
                 <img class="avatar" :src="activeContact.avatar" :alt="activeContact.name">
+                <div class="d-flex flex-column justify-content-center">
+                  <span class="fw-semibold">{{activeContact.name}}</span>
+                  <span class="smallText">Ultimo accesso oggi alle ore 12:00</span>
+                </div>
               </div>
-              <div class="col-7 d-flex flex-column">
-                <span class="fw-semibold">{{activeContact.name}}</span>
-                <span class="smallText">Ultimo accesso oggi alle ore 12:00</span>
-              </div>
-              <div class="px-2 col-4 d-flex justify-content-end">
-                <i class="fa-solid fa-magnifying-glass fontAwesome greyIcons"></i>
-                <i class="fa-solid fa-paperclip fontAwesome greyIcons"></i>
+              <div class="px-2 col d-flex justify-content-end">
+                <i class="fa-solid fa-magnifying-glass fontAwesome greyIcons d-sm-none d-md-block"></i>
+                <i class="fa-solid fa-paperclip fontAwesome greyIcons d-sm-none d-md-block"></i>
                 <i class="fa-solid fa-ellipsis-vertical fontAwesome greyIcons"></i>
               </div>
             </div>
 
             <!-- chat -->
-            <div class="col-12 flex-grow-1 overflow-y-auto h-0 p-0 chatImg">
+            <div class="col-12 flex-grow-1 overflow-y-auto h-0 chatImg">
               <div class="row m-5">
                 <div class="col-12 d-flex mb-3"
                   :class="(message.status === 'sent' ? 'justify-content-end' : 'justify-content-start')"
-                  v-for="message in activeContact.messages" :key="message.date">
+                  v-for="message in activeContact.messages">
                   <div class="col-4" :class="(message.status==='sent' ? 'sentMsg' : 'receivedMsg')">
                     <span>{{ message.message }}</span>
                     <span class="smallText d-flex justify-content-end">{{ message.date }}</span>
@@ -116,7 +116,7 @@
             </div>
 
             <!-- send a message -->
-            <div class="col-12 p-0 header">
+            <div class="col-12 header">
               <div class="row align-content-center align-items-center m-0">
                 <div class="col-1 text-center p-0">
                   <i class="fa-solid fa-smile fontAwesome greyIcons fa-fw"></i>
