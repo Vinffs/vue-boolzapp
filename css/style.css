@@ -23,8 +23,8 @@ body {
 
 #app {
   width: 100%;
-  margin: 3rem auto;
-  height: calc(100vh - 6rem);
+  margin: 2rem auto;
+  height: calc(100vh - 4rem);
 }
 
 /* backgrounds */

@@ -102,17 +102,13 @@
 
             <!-- chat -->
             <div class="col-12 flex-grow-1 overflow-y-auto h-0 p-0 chatImg">
-              <div class="row m-5">
-                <div class="col-12 d-flex justify-content-end">
-                  <div class="sentMsg col-4">
-                    <span>Hai portato a spasso il cane?</span>
-                    <span class="smallText d-flex justify-content-end align-content-end">orario</span>
-                  </div>
-                </div>
-                <div class="col-12 d-flex justify-content-start">
-                  <div class="receivedMsg col-4">
-                    <span>Mi piacerebbe ma devo andare a fare la spesa.</span>
-                    <span class="smallText d-flex justify-content-end">orario</span>
+              <div class="row m-5" v-for="contact in contacts" :key="contact.id">
+                <div class="col-12 d-flex mb-3"
+                  :class="(message.status === 'sent' ? 'justify-content-end' : 'justify-content-start')"
+                  v-for="message in contact.messages" :key="message.date">
+                  <div class="col-4" :class="(message.status==='sent' ? 'sentMsg' : 'receivedMsg')">
+                    <span>{{ message.message }}</span>
+                    <span class="smallText d-flex justify-content-end">{{ message.date }}</span>
                   </div>
                 </div>
               </div>
