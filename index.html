@@ -40,7 +40,7 @@
             </div>
             <div class="col-12 p-0 notification d-flex align-items-center">
               <div class="p-3">
-                <i class="fa-solid fa-bell-slash bell rounded-circle"></i>
+                <i class="fa-solid fa-bell-slash bell rounded-circle fontAwesome"></i>
               </div>
               <div>
                 <span class="d-block fw-semibold">Ricevi notifiche di nuovi messaggi</span>
@@ -55,21 +55,52 @@
                 <input type="text" class="form-control smallText" placeholder="Cerca o inizia una nuova chat">
               </div>
             </div>
-            <div class="col-12 flex-grow-1 overflow-y-auto h-0 p-0">
-              Contatti
+            <div class="col-12 flex-grow-1 overflow-y-scroll h-0 p-0 pb-2">
+              <div class="contact d-flex justify-content-between border-bottom">
+                <div class="d-flex">
+                  <img class="avatar" src="img/avatar_1.jpg" alt="">
+                  <div class="m-2">
+                    <span class="d-block fw-semibold">Name</span>
+                    <span class="smallText">Ultimo messaggio inviato</span>
+                  </div>
+                </div>
+                <div class="smallText px-1 m-2">Orario</div>
+              </div>
             </div>
           </div>
         </div>
         <div class="col-8 border">
           <div class="row h-100 flex-column flex-nowrap">
-            <div class="col-12 p-0">
-              utente
+            <div class="col-12 header p-0 d-flex align-content-center align-items-center justify-content-around">
+              <div class="col-1">
+                <img class="avatar" src="img/avatar_io.jpg" alt="Sofia">
+              </div>
+              <div class="col-7 d-flex flex-column">
+                <span class="fw-semibold">Sofia</span>
+                <span class="smallText">Ultimo accesso oggi alle ore 12:00</span>
+              </div>
+              <div class="px-2 col-4 d-flex justify-content-end">
+                <i class="fa-solid fa-magnifying-glass fontAwesome greyIcons"></i>
+                <i class="fa-solid fa-paperclip fontAwesome greyIcons"></i>
+                <i class="fa-solid fa-ellipsis-vertical fontAwesome greyIcons"></i>
+              </div>
             </div>
             <div class="col-12 flex-grow-1 overflow-y-auto h-0 p-0 chatImg">
               chat
             </div>
-            <div class="col-12 p-0">
-              invio messaggi
+            <div class="col-12 p-0 header">
+              <div class="row align-content-center align-items-center m-0">
+                <div class="col-1 text-center p-0">
+                  <i class="fa-solid fa-smile fontAwesome greyIcons fa-fw"></i>
+                </div>
+                <div class="col-10 my-2 p-0">
+                  <input type="email" class="form-control" id="exampleFormControlInput1"
+                    placeholder="Scrivi un messaggio">
+                </div>
+                <div class="col-1 text-center p-0">
+                  <i class="fa-solid fa-microphone fontAwesome greyIcons fa-fw"></i>
+                </div>
+              </div>
             </div>
           </div>
         </div>

@@ -52,13 +52,12 @@ body {
 /* Image and FontAweasome */
 
 .avatar {
-  width: 50px;
+  width: 60px;
   border-radius: 50%;
   margin: 0.5rem;
 }
 
-.fontAwesome,
-.bell {
+.fontAwesome {
   font-size: 1.5em;
   padding: 0 0.5rem;
 }
