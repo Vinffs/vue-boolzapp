@@ -66,7 +66,8 @@
 
             <!-- contacts -->
             <div class="col-12 flex-grow-1 overflow-y-scroll h-0 p-0 pb-2">
-              <div class="contact d-flex justify-content-between border-bottom" v-for="person in contacts">
+              <div class="d-flex justify-content-between border-bottom" v-for="person in contacts"
+                @click='active(person)' style='cursor:pointer'>
                 <div class="d-flex">
                   <img class="avatar" :src="person.avatar" :alt="person.name">
                   <div class="m-2">
@@ -80,17 +81,17 @@
           </div>
         </div>
 
-        <!-- right side bar -->
+        <!-- right bar -->
         <div class="col-8 border">
           <div class="row h-100 flex-column flex-nowrap">
 
             <!-- contact chat -->
             <div class="col-12 header p-0 d-flex align-content-center align-items-center justify-content-around">
               <div class="col-1">
-                <img class="avatar" src="img/avatar_io.jpg" alt="Sofia">
+                <img class="avatar" :src="activeContact.avatar" :alt="activeContact.name">
               </div>
               <div class="col-7 d-flex flex-column">
-                <span class="fw-semibold">Sofia</span>
+                <span class="fw-semibold">{{activeContact.name}}</span>
                 <span class="smallText">Ultimo accesso oggi alle ore 12:00</span>
               </div>
               <div class="px-2 col-4 d-flex justify-content-end">

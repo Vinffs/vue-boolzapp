@@ -5,6 +5,14 @@ createApp({
   data() {
     return {
       contacts: contactList,
+
+      activeContact: contactList[0],
     };
+  },
+  methods: {
+    active(person) {
+      this.activeContact = person;
+      console.log(this.activeContact);
+    },
   },
 }).mount("#app");
