@@ -12,7 +12,6 @@ createApp({
   methods: {
     active(person) {
       this.activeContact = person;
-      console.log(this.activeContact);
     },
   },
 }).mount("#app");
