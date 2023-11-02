@@ -77,3 +77,19 @@ body {
   font-size: 0.8em;
   color: var(--my-lightgrey-text-color)
 }
+
+/* sent and received messages */
+.sentMsg,
+.receivedMsg {
+  border-radius: 10px;
+  font-size: 0.9em;
+  padding: 5px 10px;
+}
+
+.sentMsg {
+  background-color: var(--my-lightgreen-msg-color);
+}
+
+.receivedMsg {
+  background-color: var(--my-white-color);
+}

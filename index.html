@@ -24,9 +24,13 @@
 <body>
   <div id="app">
     <div class="container border h-100">
+
+      <!-- left side bar -->
       <div class="row h-100 flex-nowrap">
         <div class="col-4 border contacts">
           <div class="row h-100 flex-column flex-nowrap">
+
+            <!-- User profile -->
             <div class="col-12 header p-0 d-flex justify-content-between align-content-center align-items-center">
               <div>
                 <img class="avatar" src="img/avatar_io.jpg" alt="Sofia">
@@ -38,6 +42,8 @@
                 <i class="fa-solid fa-ellipsis-vertical fontAwesome greyIcons"></i>
               </div>
             </div>
+
+            <!-- notifications -->
             <div class="col-12 p-0 notification d-flex align-items-center">
               <div class="p-3">
                 <i class="fa-solid fa-bell-slash bell rounded-circle fontAwesome"></i>
@@ -47,6 +53,8 @@
                 <span class="smallText text-decoration-underline">Attiva notifiche desktop</span>
               </div>
             </div>
+
+            <!-- searchbar -->
             <div class="col-12 p-2 lightGreyBg">
               <div class="input-group">
                 <div class="input-group-prepend">
@@ -55,6 +63,8 @@
                 <input type="text" class="form-control smallText" placeholder="Cerca o inizia una nuova chat">
               </div>
             </div>
+
+            <!-- contacts -->
             <div class="col-12 flex-grow-1 overflow-y-scroll h-0 p-0 pb-2">
               <div class="contact d-flex justify-content-between border-bottom" v-for="person in contacts">
                 <div class="d-flex">
@@ -69,8 +79,12 @@
             </div>
           </div>
         </div>
+
+        <!-- right side bar -->
         <div class="col-8 border">
           <div class="row h-100 flex-column flex-nowrap">
+
+            <!-- contact chat -->
             <div class="col-12 header p-0 d-flex align-content-center align-items-center justify-content-around">
               <div class="col-1">
                 <img class="avatar" src="img/avatar_io.jpg" alt="Sofia">
@@ -85,9 +99,26 @@
                 <i class="fa-solid fa-ellipsis-vertical fontAwesome greyIcons"></i>
               </div>
             </div>
+
+            <!-- chat -->
             <div class="col-12 flex-grow-1 overflow-y-auto h-0 p-0 chatImg">
-              chat
+              <div class="row m-5">
+                <div class="col-12 d-flex justify-content-end">
+                  <div class="sentMsg col-4">
+                    <span>Hai portato a spasso il cane?</span>
+                    <span class="smallText d-flex justify-content-end align-content-end">orario</span>
+                  </div>
+                </div>
+                <div class="col-12 d-flex justify-content-start">
+                  <div class="receivedMsg col-4">
+                    <span>Mi piacerebbe ma devo andare a fare la spesa.</span>
+                    <span class="smallText d-flex justify-content-end">orario</span>
+                  </div>
+                </div>
+              </div>
             </div>
+
+            <!-- send a message -->
             <div class="col-12 p-0 header">
               <div class="row align-content-center align-items-center m-0">
                 <div class="col-1 text-center p-0">
