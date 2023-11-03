@@ -125,7 +125,7 @@
                 </div>
                 <div class="col-9 my-2 px-0">
                   <input type="email" class="form-control" id="exampleFormControlInput1"
-                    placeholder="Scrivi un messaggio">
+                    placeholder="Scrivi un messaggio" @keyup.enter="sendMsg()" v-model="msgToSend">
                 </div>
                 <div class="col px-0 text-center">
                   <i class="fa-solid fa-microphone fontAwesome greyIcons p-0"></i>
