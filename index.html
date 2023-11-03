@@ -66,12 +66,12 @@
 
             <!-- contacts -->
             <div class="col-12 flex-grow-1 overflow-y-scroll h-0 pb-2 px-0" @click="displayChat()">
-              <div class="d-flex justify-content-between border-bottom" v-for="person in contacts"
-                @click='active(person)' style='cursor:pointer'>
+              <div class="d-flex justify-content-between border-bottom" v-for="(contact, index) in contacts"
+                @click='active(contact.id)' style='cursor:pointer' :key="contact.id">
                 <div class="d-flex">
-                  <img class="avatar" :src="person.avatar" :alt="person.name">
+                  <img class="avatar" :src="contact.avatar" :alt="contact.name">
                   <div class="my-2">
-                    <span class="d-block fw-semibold">{{person.name}}</span>
+                    <span class="d-block fw-semibold">{{contact.name}}</span>
                     <span class="smallText">Ultimo messaggio inviato</span>
                   </div>
                 </div>
@@ -104,12 +104,10 @@
             </div>
 
             <!-- chat -->
-            <div class="col-12 flex-grow-1 overflow-y-auto h-0 chat">
-              <div class="row m-4"
-                :class="{ 'lastMsg': message === activeContact.messages[activeContact.messages.length - 1] }">
-                <div class="col-12 d-flex mb-3"
-                  :class="(message.status === 'sent' ? 'justify-content-end' : 'justify-content-start')"
-                  v-for="message in activeContact.messages">
+            <div class="col-12 flex-grow-1 overflow-y-auto h-0 chat" ref="chat">
+              <div class="row m-4" :class="isLastMsg()">
+                <div class="col-12 d-flex mb-3" :class="isMsgSent(message)"
+                  v-for="(message, index) in activeContact.messages">
                   <div class="col-4" :class="(message.status==='sent' ? 'sentMsg' : 'receivedMsg')">
                     <span>{{ message.message }}</span>
                     <span class="smallText d-flex justify-content-end">{{ message.date }}</span>
