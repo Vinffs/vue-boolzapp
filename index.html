@@ -104,8 +104,9 @@
             </div>
 
             <!-- chat -->
-            <div class="col-12 flex-grow-1 overflow-y-auto h-0 chatImg">
-              <div class="row m-4">
+            <div class="col-12 flex-grow-1 overflow-y-auto h-0 chat">
+              <div class="row m-4"
+                :class="{ 'lastMsg': message === activeContact.messages[activeContact.messages.length - 1] }">
                 <div class="col-12 d-flex mb-3"
                   :class="(message.status === 'sent' ? 'justify-content-end' : 'justify-content-start')"
                   v-for="message in activeContact.messages">

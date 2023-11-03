@@ -36,8 +36,9 @@ body {
   background-color: var(--my-primary-header-color);
 }
 
-.chatImg {
+.chat {
   background-image: url("../img/mine.jpg");
+  overflow-y: auto;
 }
 
 .notification {
@@ -92,4 +93,8 @@ body {
 
 .receivedMsg {
   background-color: var(--my-white-color);
+}
+
+.lastMsg {
+  margin-bottom: 50px;
 }

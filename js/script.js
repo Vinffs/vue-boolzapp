@@ -19,6 +19,12 @@ createApp({
       this.activeChat = !this.activeChat;
       console.log(this.activeChat);
     },
+    scrollToLastMsg() {
+      const chatContainer = document.querySelector(".chat");
+      if (chatContainer) {
+        chatContainer.scrollTop = chatContainer.scrollHeight;
+      }
+    },
     sendMsg() {
       this.activeContact.messages.push({
         date: new Date().toLocaleString(),
@@ -26,6 +32,9 @@ createApp({
         status: "sent",
       });
       this.msgToSend = "";
+      setTimeout(() => {
+        this.scrollToLastMsg();
+      }, 10);
 
       setTimeout(() => {
         this.userAnswer();
@@ -38,6 +47,9 @@ createApp({
         message: "ok",
         status: "received",
       });
+      setTimeout(() => {
+        this.scrollToLastMsg();
+      }, 10);
     },
   },
 }).mount("#app");
