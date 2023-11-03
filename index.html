@@ -27,7 +27,7 @@
 
       <!-- left side bar -->
       <div class="row h-100 flex-nowrap">
-        <div id="leftBar" class="col-md-5 col-lg-4 contacts d-md-block" :class="(!activeChat ? 'col-12' : 'd-none')">
+        <div id="leftBar" class="col-md-5 col-lg-4 contacts d-md-block" :class="isChatActive(!collapse)">
           <div class="row h-100 flex-column flex-nowrap">
 
             <!-- User profile -->
@@ -82,7 +82,7 @@
         </div>
 
         <!-- right bar -->
-        <div id="rightBar" class="col-md-7 col-lg-8 d-md-block border" :class="(activeChat ? 'col-12' : 'd-none')">
+        <div id="rightBar" class="col-md-7 col-lg-8 d-md-block border" :class="isChatActive(collapse)">
           <div class=" row h-100 flex-column flex-nowrap">
 
             <!-- contact chat -->

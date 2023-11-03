@@ -77,9 +77,11 @@ createApp({
       return message.status === "sent" ? end : start;
     },
 
-    // isChatActive() {
-    //   return this.activeChat ? "col-12" : "d-none";
-    // },
+    // gives class "col-12" or "d-none" depending on condition (mobile version)
+    isChatActive(collapse) {
+      const condition = collapse ? !this.activeChat : this.activeChat;
+      return condition ? "col-12" : "d-none";
+    },
   },
   computed: {
     activeContact() {
