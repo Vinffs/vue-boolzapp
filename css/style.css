@@ -52,7 +52,7 @@ body {
 /* Image and FontAweasome */
 
 .avatar {
-  width: 60px;
+  max-width: 60px;
   border-radius: 50%;
   margin: 0.5rem;
 }
