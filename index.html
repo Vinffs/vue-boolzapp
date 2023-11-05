@@ -60,14 +60,16 @@
                 <div class="input-group-prepend">
                   <button class="btn border rounded-0 bg-white"><i class="fas fa-search px-3"></i></button>
                 </div>
-                <input type="text" class="form-control smallText" placeholder="Cerca o inizia una nuova chat">
+                <input type="text" class="form-control smallText" placeholder="Cerca o inizia una nuova chat"
+                  @keyup="filterSearch(searchBar)" v-model="searchBar">
               </div>
             </div>
 
             <!-- contacts -->
             <div class="col-12 flex-grow-1 overflow-y-scroll h-0 pb-2 px-0" @click="displayChat()">
-              <div class="d-flex justify-content-between border-bottom" v-for="(contact, index) in contacts"
-                @click='active(contact.id)' style='cursor:pointer' :key="contact.id">
+              <div class="d-flex justify-content-between border-bottom" :class="{'d-none': !contact.visible}"
+                v-for="(contact, index) in contacts" @click='active(contact.id)' style='cursor:pointer'
+                :key="contact.id">
                 <div class="d-flex">
                   <img class="avatar" :src="contact.avatar" :alt="contact.name">
                   <div class="my-2">

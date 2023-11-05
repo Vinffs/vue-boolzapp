@@ -8,7 +8,9 @@ createApp({
 
       contactIndex: 0,
       activeChat: false,
+      collapse: false,
       msgToSend: "",
+      searchBar: "",
     };
   },
   methods: {
@@ -81,6 +83,16 @@ createApp({
     isChatActive(collapse) {
       const condition = collapse ? !this.activeChat : this.activeChat;
       return condition ? "col-12" : "d-none";
+    },
+
+    // filters user input in the searchbar and returns user names that matches
+    filterSearch(searchBar) {
+      searchBar = searchBar.trimStart(" ").toUpperCase();
+      this.contacts.forEach((contact) => {
+        return contact.name.toUpperCase().includes(searchBar)
+          ? (contact.visible = true)
+          : (contact.visible = false);
+      });
     },
   },
   computed: {
