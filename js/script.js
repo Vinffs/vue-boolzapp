@@ -67,16 +67,21 @@ createApp({
 
     // gives the class "lastMsg" to the last message of the array
     isLastMsg() {
-      const elMessage = this.contacts[this.contactIndex];
-      const lastMessage = elMessage.messages.length - 1;
+      const contact = this.activeContact;
+      const lastMessage = contact.messages.length - 1;
       return lastMessage ? "lastMsg" : null;
     },
 
     // gives the d-flex justify-content (start or end) based on condition
-    isMsgSent(message) {
+    chatPosition(message) {
       let start = "justify-content-start";
       let end = "justify-content-end";
       return message.status === "sent" ? end : start;
+    },
+
+    // gives CSS class to message box based on condition
+    isMessage(message) {
+      return message.status === "sent" ? "sentMsg" : "receivedMsg";
     },
 
     // gives class "col-12" or "d-none" depending on condition (mobile version)
@@ -94,10 +99,41 @@ createApp({
           : (contact.visible = false);
       });
     },
+
+    // gives last message sent
+    lastMsg(id) {
+      const contact = this.contacts.find((contact) => contact.id === id);
+      let msgLength = contact.messages.length;
+      return msgLength > 0
+        ? contact.messages[msgLength - 1].message
+        : "Non ci sono messaggi";
+    },
+
+    // gives back only the hour (2 digits hour, 2 digits min)
+    lastHour(id) {
+      const contact = this.contacts.find((contact) => contact.id === id);
+      let msgLength = contact.messages.length;
+      let lastDate = contact.messages[msgLength - 1].date;
+      let lastHour = lastDate.slice(11, -3);
+      return msgLength > 0 ? lastHour : "Orario non disponibile";
+    },
   },
   computed: {
+    // returns contact at position contactIndex
     activeContact() {
-      return this.contacts[this.contactIndex];
+      const contact = this.contacts[this.contactIndex];
+      return contact;
+    },
+    // Gives date and hour of last access
+    lastDate() {
+      const length = this.activeContact.messages.length;
+      let lastDate = this.activeContact.messages[length - 1].date;
+      return length > 0
+        ? `Ultimo accesso il ${lastDate.slice(0, -9)} alle ore ${lastDate.slice(
+            11,
+            -3
+          )}`
+        : "Informazione non disponibile";
     },
   },
 }).mount("#app");
