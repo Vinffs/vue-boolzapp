@@ -49,6 +49,10 @@ body {
   background-color: var(--my-primary-header-color);
 }
 
+.onContact {
+  background-color: var(--my-lightgrey-icons-color);
+}
+
 
 /* Image and FontAweasome */
 
@@ -97,4 +101,37 @@ body {
 
 .lastMsg {
   margin-bottom: 50px;
+}
+
+/* dropDown menu */
+.dropdown {
+  position: relative;
+}
+
+.dropDownMenu {
+  display: none;
+  position: absolute;
+  width: 150px;
+  top: 100%;
+  right: 0;
+  background-color: var(--my-white-color);
+  border: 1px solid var(--my-lightgrey-text-color);
+  border-radius: 5px;
+  z-index: 1000;
+  padding: 0 !important;
+}
+
+.dropdown .dropDownMenu ul {
+  list-style: none;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+.dropDownMenu ul li {
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+.dropDownMenu ul li:hover {
+  background-color: var(--my-lightgrey-text-color);
 }

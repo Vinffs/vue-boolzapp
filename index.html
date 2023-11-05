@@ -27,7 +27,7 @@
 
       <!-- left side bar -->
       <div class="row h-100 flex-nowrap">
-        <div id="leftBar" class="col-md-5 col-lg-4 contacts d-md-block" :class="isChatActive(!collapse)">
+        <div id="leftBar" class="col-md-5 col-lg-4 d-md-block contacts" :class="isChatActive(!collapse)">
           <div class="row h-100 flex-column flex-nowrap">
 
             <!-- User profile -->
@@ -66,7 +66,8 @@
             </div>
 
             <!-- contacts -->
-            <div class="col-12 flex-grow-1 overflow-y-scroll h-0 pb-2 px-0" @click="displayChat()">
+            <div class="col-12 flex-grow-1 overflow-y-scroll h-0 pb-2 px-0" @click="displayChat()"
+              @mouseover="onContact">
               <div class="d-flex justify-content-between border-bottom" :class="{'d-none': !contact.visible}"
                 v-for="(contact, index) in contacts" @click='active(contact.id)' style='cursor:pointer'
                 :key="contact.id">
@@ -111,7 +112,20 @@
                 <div class="col-12 d-flex mb-3" :class="chatPosition(message)"
                   v-for="(message, index) in activeContact.messages">
                   <div class="col-4" :class="isMessage(message)">
-                    <span>{{ message.message }}</span>
+                    <div class="d-flex justify-content-between pb-3">
+                      <span>{{ message.message }}</span>
+                      <div class="col-1 px-1">
+                        <div class="dropdown" @click="grabMessage(index)">
+                          <i class="fa-solid fa-chevron-down greyIcons" style="cursor:pointer"></i>
+                          <div class="dropDownMenu" :class='displayDropDown(index)' @mouseleave="closeDropDown()">
+                            <ul>
+                              <li>Message Info</li>
+                              <li @click="deleteMessage()">Delete Message</li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
                     <span class="smallText d-flex justify-content-end">{{message.date.slice(11,-3)}}</span>
                   </div>
                 </div>
