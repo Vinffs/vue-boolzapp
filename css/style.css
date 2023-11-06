@@ -53,6 +53,10 @@ body {
   background-color: var(--my-lightgrey-icons-color);
 }
 
+.greyHover:hover {
+  background-color: var(--my-contacts-color);
+}
+
 
 /* Image and FontAweasome */
 
