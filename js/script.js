@@ -25,14 +25,6 @@ createApp({
       this.activeChat = !this.activeChat;
     },
 
-    // function that scrolls the chat to the bottom
-    scrollToLastMsg() {
-      const chatContainer = this.$refs.chat;
-      if (chatContainer) {
-        chatContainer.scrollTop = chatContainer.scrollHeight;
-      }
-    },
-
     // creates a new SENT message and pushes it into the array of messages
     sendMsg() {
       this.activeContact.messages.push({
@@ -40,12 +32,11 @@ createApp({
         message: this.msgToSend,
         status: "sent",
       });
+      this.$nextTick(() => {
+        const chatContainer = this.$refs.chat;
+        chatContainer.scrollTop = chatContainer.scrollHeight;
+      });
       this.msgToSend = "";
-
-      // scrollbar goes to bottom of chat in 10ms
-      setTimeout(() => {
-        this.scrollToLastMsg();
-      }, 10);
 
       // calculated answer has a delay of 1 second
       setTimeout(() => {
@@ -60,10 +51,10 @@ createApp({
         message: "ok",
         status: "received",
       });
-      // scrollbar goes to bottom of chat in 10ms
-      setTimeout(() => {
-        this.scrollToLastMsg();
-      }, 10);
+      this.$nextTick(() => {
+        const chatContainer = this.$refs.chat;
+        chatContainer.scrollTop = chatContainer.scrollHeight;
+      });
     },
 
     // gives the class "lastMsg" to the last message of the array
