@@ -69,9 +69,8 @@
             <div class="col-12 flex-grow-1 overflow-y-scroll h-0 pb-2 px-0" @click="displayChat()"
               @mouseover="onContact">
               <div class="d-flex justify-content-between border-bottom greyHover"
-                :class="{'d-none': !contact.visible, 'onContact': index === contactIndex}"
-                v-for="(contact, index) in contacts" @click='active(contact.id)' style='cursor:pointer'
-                :key="contact.id">
+                :class="{'onContact': index === contactIndex}" v-for="(contact, index) in contacts"
+                @click='active(contact.id)' style='cursor:pointer' :key="contact.id">
                 <div class="d-flex">
                   <img class="avatar" :src="contact.avatar" :alt="contact.name">
                   <div class="my-2">
